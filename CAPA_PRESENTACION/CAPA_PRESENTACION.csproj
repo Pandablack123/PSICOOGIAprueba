@@ -1,0 +1,1348 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{500C22EA-F1D2-4955-92AB-89B365A47039}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CAPA_PRESENTACION</RootNamespace>
+    <AssemblyName>CAPA_PRESENTACION</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bunifu.Core, Version=1.11.5.1, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL" />
+    <Reference Include="Bunifu.UI.WinForm.BunifuShadowPanel">
+      <HintPath>..\..\..\..\..\Downloads\Bunifu_UI_WinForms_1.11.5.1\Bunifu_UI_WinForms_1.11.5.1\Bunifu.UI.WinForm.BunifuShadowPanel.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuButton">
+      <HintPath>..\..\..\..\..\Downloads\Bunifu_UI_WinForms_1.11.5.1\Bunifu_UI_WinForms_1.11.5.1\Bunifu.UI.WinForms.BunifuButton.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDataGridView">
+      <HintPath>..\..\..\..\..\Downloads\Bunifu_UI_WinForms_1.11.5.1\Bunifu_UI_WinForms_1.11.5.1\Bunifu.UI.WinForms.BunifuDataGridView.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDatePicker">
+      <HintPath>..\..\..\..\..\Downloads\Bunifu_UI_WinForms_1.11.5.1\Bunifu_UI_WinForms_1.11.5.1\Bunifu.UI.WinForms.BunifuDatePicker.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDropdown">
+      <HintPath>..\..\..\..\..\Downloads\Bunifu_UI_WinForms_1.11.5.1\Bunifu_UI_WinForms_1.11.5.1\Bunifu.UI.WinForms.BunifuDropdown.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuGauge">
+      <HintPath>..\..\..\..\..\Downloads\Bunifu_UI_WinForms_1.11.5.1\Bunifu_UI_WinForms_1.11.5.1\Bunifu.UI.WinForms.BunifuGauge.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuLabel">
+      <HintPath>..\..\..\..\..\Downloads\Bunifu_UI_WinForms_1.11.5.1\Bunifu_UI_WinForms_1.11.5.1\Bunifu.UI.WinForms.BunifuLabel.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuPages, Version=1.11.5.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Downloads\Bunifu_UI_WinForms_1.11.5.1\Bunifu_UI_WinForms_1.11.5.1\Bunifu.UI.WinForms.BunifuPages.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuPictureBox">
+      <HintPath>..\..\..\..\..\Downloads\Bunifu_UI_WinForms_1.11.5.1\Bunifu_UI_WinForms_1.11.5.1\Bunifu.UI.WinForms.BunifuPictureBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuRadioButton">
+      <HintPath>..\..\..\..\..\Downloads\Bunifu_UI_WinForms_1.11.5.1\Bunifu_UI_WinForms_1.11.5.1\Bunifu.UI.WinForms.BunifuRadioButton.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuTextbox">
+      <HintPath>..\..\..\..\..\Downloads\Bunifu_UI_WinForms_1.11.5.1\Bunifu_UI_WinForms_1.11.5.1\Bunifu.UI.WinForms.BunifuTextbox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuTransition">
+      <HintPath>..\..\..\..\..\Downloads\Bunifu_UI_WinForms_1.11.5.1\Bunifu_UI_WinForms_1.11.5.1\Bunifu.UI.WinForms.BunifuTransition.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuUserControl">
+      <HintPath>..\..\..\..\..\Downloads\Bunifu_UI_WinForms_1.11.5.1\Bunifu_UI_WinForms_1.11.5.1\Bunifu.UI.WinForms.BunifuUserControl.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu_UI_v1.5.3">
+      <HintPath>..\..\..\..\..\Downloads\Bunifu_UI_WinForms_1.11.5.1\Bunifu_UI_WinForms_1.11.5.1\Bunifu_UI_v1.5.3.dll</HintPath>
+    </Reference>
+    <Reference Include="Calendario">
+      <HintPath>..\..\..\..\..\Downloads\Calendario.dll</HintPath>
+    </Reference>
+    <Reference Include="CircularProgressBar, Version=2.8.0.16, Culture=neutral, PublicKeyToken=310fd07b25df79b3, processorArchitecture=MSIL">
+      <HintPath>..\packages\CircularProgressBar.2.8.0.16\lib\net40\CircularProgressBar.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\..\..\Downloads\Microsoft.Office.Interop.Word.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\VisualBasic.PowerPacks.Vs.1.0.0\lib\Microsoft.VisualBasic.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic.PowerPacks, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\VisualBasic.PowerPacks.Vs.1.0.0\lib\Microsoft.VisualBasic.PowerPacks.Vs.dll</HintPath>
+    </Reference>
+    <Reference Include="ModernXamarinCalendar, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ModernXamarinCalendar.1.0.4\lib\netstandard2.0\ModernXamarinCalendar.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WinFormAnimation, Version=1.6.0.4, Culture=neutral, PublicKeyToken=310fd07b25df79b3, processorArchitecture=MSIL">
+      <HintPath>..\packages\WinFormAnimation.1.6.0.4\lib\net40\WinFormAnimation.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Actualizar formulario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Actualizar formulario.Designer.cs">
+      <DependentUpon>Actualizar formulario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Agendarcita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Agendarcita.Designer.cs">
+      <DependentUpon>Agendarcita.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Agendarcitahijo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Agendarcitahijo.Designer.cs">
+      <DependentUpon>Agendarcitahijo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AgregarMotivo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgregarMotivo.Designer.cs">
+      <DependentUpon>AgregarMotivo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Buttonpersolizado.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cambiar contraseña.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cambiar contraseña.Designer.cs">
+      <DependentUpon>Cambiar contraseña.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cita.cs">
+      <DependentUpon>global.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Class1.cs" />
+    <Compile Include="Combobox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Consulta.cs">
+      <DependentUpon>global.tt</DependentUpon>
+    </Compile>
+    <Compile Include="expediente.cs">
+      <DependentUpon>expediente.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="File_psico.cs">
+      <DependentUpon>global.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Informe.cs">
+      <SubType>Form</SubType>
+      <DependentUpon>INFORME.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Informe.Designer.cs">
+      <DependentUpon>Informe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="global.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>global.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="global.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>global.tt</DependentUpon>
+    </Compile>
+    <Compile Include="global.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>global.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="INFORME1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>INFORME.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Datetimepicker.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="expediente.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>expediente.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Formcierre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formcierre.Designer.cs">
+      <DependentUpon>Formcierre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formwelcome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formwelcome.Designer.cs">
+      <DependentUpon>Formwelcome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="informeA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="informeA.Designer.cs">
+      <DependentUpon>informeA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="informeModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>informeModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="informeModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>informeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="informeModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>informeModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="informeR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="informeR.Designer.cs">
+      <DependentUpon>informeR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IniciarConsulta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IniciarConsulta.Designer.cs">
+      <DependentUpon>IniciarConsulta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IniciarSeguimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IniciarSeguimiento.Designer.cs">
+      <DependentUpon>IniciarSeguimiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="nombreModel1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>nombreModel1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="nombreModel1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>nombreModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="nombreModel1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>nombreModel1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="NuevoExpe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NuevoExpe.Designer.cs">
+      <DependentUpon>NuevoExpe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="paneldegra2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Paneldegradado.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Pictureboxpersonal.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Principal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Principal.Designer.cs">
+      <DependentUpon>Principal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="PYA2021DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PYA2021DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PYA2021DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PYA2021DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PYA2021DataSet10.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PYA2021DataSet10.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PYA2021DataSet11.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PYA2021DataSet11.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PYA2021DataSet12.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PYA2021DataSet12.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PYA2021DataSet13.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PYA2021DataSet13.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PYA2021DataSet14.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PYA2021DataSet14.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PYA2021DataSet15.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PYA2021DataSet15.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PYA2021DataSet16.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PYA2021DataSet16.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PYA2021DataSet17.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PYA2021DataSet17.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PYA2021DataSet18.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PYA2021DataSet18.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PYA2021DataSet19.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PYA2021DataSet19.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PYA2021DataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PYA2021DataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PYA2021DataSet20.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PYA2021DataSet20.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PYA2021DataSet21.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PYA2021DataSet21.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PYA2021DataSet22.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PYA2021DataSet22.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PYA2021DataSet23.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PYA2021DataSet23.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PYA2021DataSet24.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PYA2021DataSet24.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PYA2021DataSet25.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PYA2021DataSet25.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PYA2021DataSet26.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PYA2021DataSet26.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PYA2021DataSet27.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PYA2021DataSet27.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PYA2021DataSet28.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PYA2021DataSet28.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PYA2021DataSet29.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PYA2021DataSet29.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PYA2021DataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PYA2021DataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PYA2021DataSet30.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PYA2021DataSet30.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PYA2021DataSet31.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PYA2021DataSet31.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PYA2021DataSet32.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PYA2021DataSet32.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PYA2021DataSet33.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PYA2021DataSet33.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PYA2021DataSet34.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PYA2021DataSet34.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PYA2021DataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PYA2021DataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PYA2021DataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PYA2021DataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PYA2021DataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PYA2021DataSet6.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PYA2021DataSet7.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PYA2021DataSet7.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PYA2021DataSet8.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PYA2021DataSet8.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PYA2021DataSet9.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PYA2021DataSet9.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="radiobuttonpersonal.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Recovery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Recovery.Designer.cs">
+      <DependentUpon>Recovery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Remision.cs">
+      <DependentUpon>global.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RptExpe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RptExpe.Designer.cs">
+      <DependentUpon>RptExpe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Seguimiento.cs">
+      <DependentUpon>global.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_Nombre_Result.cs">
+      <DependentUpon>nombreModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP__Result.cs">
+      <DependentUpon>informeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="Tema.cs" />
+    <Compile Include="Temas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Temas.Designer.cs">
+      <DependentUpon>Temas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="textboxpersonal.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="textboxpersonal.Designer.cs">
+      <DependentUpon>textboxpersonal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ver cita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ver cita.Designer.cs">
+      <DependentUpon>Ver cita.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VerConsulta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VerConsulta.Designer.cs">
+      <DependentUpon>VerConsulta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VerExpediente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VerExpediente.Designer.cs">
+      <DependentUpon>VerExpediente.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Actualizar formulario.resx">
+      <DependentUpon>Actualizar formulario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Agendarcita.resx">
+      <DependentUpon>Agendarcita.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Agendarcitahijo.resx">
+      <DependentUpon>Agendarcitahijo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AgregarMotivo.resx">
+      <DependentUpon>AgregarMotivo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cambiar contraseña.resx">
+      <DependentUpon>Cambiar contraseña.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="edad1.rdlc" />
+    <EmbeddedResource Include="estainforme.rdlc" />
+    <EmbeddedResource Include="Informe.resx">
+      <DependentUpon>Informe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formcierre.resx">
+      <DependentUpon>Formcierre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formwelcome.resx">
+      <DependentUpon>Formwelcome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="informeA.resx">
+      <DependentUpon>informeA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="informeR.resx">
+      <DependentUpon>informeR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IniciarConsulta.resx">
+      <DependentUpon>IniciarConsulta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IniciarSeguimiento.resx">
+      <DependentUpon>IniciarSeguimiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NOMBRE.rdlc" />
+    <EmbeddedResource Include="NuevoExpe.resx">
+      <DependentUpon>NuevoExpe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Principal.resx">
+      <DependentUpon>Principal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Recovery.resx">
+      <DependentUpon>Recovery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="grado.rdlc" />
+    <EmbeddedResource Include="MOTIVO.rdlc" />
+    <EmbeddedResource Include="REPORTEA\edad2.rdlc" />
+    <EmbeddedResource Include="REPORTEA\grado2.rdlc" />
+    <EmbeddedResource Include="REPORTEA\motivo2.rdlc" />
+    <EmbeddedResource Include="REPORTEA\sexo2.rdlc" />
+    <EmbeddedResource Include="REPORTER\edad1.rdlc" />
+    <EmbeddedResource Include="REPORTER\grado1.rdlc" />
+    <EmbeddedResource Include="REPORTER\motivo1.rdlc" />
+    <EmbeddedResource Include="REPORTER\sexo1.rdlc" />
+    <EmbeddedResource Include="SEXO.rdlc" />
+    <EmbeddedResource Include="RptExpe.resx">
+      <DependentUpon>RptExpe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rpt_Expediente.rdlc" />
+    <EmbeddedResource Include="Temas.resx">
+      <DependentUpon>Temas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="textboxpersonal.resx">
+      <DependentUpon>textboxpersonal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ver cita.resx">
+      <DependentUpon>Ver cita.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VerConsulta.resx">
+      <DependentUpon>VerConsulta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VerExpediente.resx">
+      <DependentUpon>VerExpediente.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CAPA_NEGOCIO\CAPA_NEGOCIO.csproj">
+      <Project>{f240a73c-db20-4919-ac36-e59f96bb2ad8}</Project>
+      <Name>CAPA_NEGOCIO</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <EntityDeploy Include="global.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>global.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="global.edmx.diagram">
+      <DependentUpon>global.edmx</DependentUpon>
+    </None>
+    <None Include="INFORME.xsc">
+      <DependentUpon>INFORME.xsd</DependentUpon>
+    </None>
+    <None Include="INFORME.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>INFORME1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="INFORME.xss">
+      <DependentUpon>INFORME.xsd</DependentUpon>
+    </None>
+    <None Include="expediente.xsc">
+      <DependentUpon>expediente.xsd</DependentUpon>
+    </None>
+    <None Include="expediente.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>expediente.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="expediente.xss">
+      <DependentUpon>expediente.xsd</DependentUpon>
+    </None>
+    <None Include="imagenes\closewindowapplication_cerca_ventan_2874.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imagenes\gui_form_checkbox_icon_157650.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imagenes\window_restore_icon_144027.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imagenes\minimize_thewindow_theapplication_2872.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imagenes\brain_storming_settings_thought_preferences_icon_124677.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imagenes\3844476-eye-see-show-view-watch_110339.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imagenes\newfile_85903.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imagenes\download_arrow_icon_143023.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imagenes\appointment_icon_179680.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imagenes\twocirclingarrows_120593.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imagenes\login-square-arrow-button-outline_icon-icons.com_73220.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imagenes\3700408-archive-document-education-exam-file-test_108771.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imagenes\search_locate_find_icon-icons.com_67287.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imagenes\avatardefault_92824.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imagenes\delete_remove_close_icon_181533.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imagenes\human_brain_psychiatrist_icon_131296.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="informeModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>informeModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="informeModel.edmx.diagram">
+      <DependentUpon>informeModel.edmx</DependentUpon>
+    </None>
+    <EntityDeploy Include="nombreModel1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>nombreModel1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="nombreModel1.edmx.diagram">
+      <DependentUpon>nombreModel1.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\CAPA_PRESENTACION.PYA2021DataSet7TableAdapters.QueriesTableAdapter.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="PYA2021DataSet.xsc">
+      <DependentUpon>PYA2021DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="PYA2021DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PYA2021DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PYA2021DataSet.xss">
+      <DependentUpon>PYA2021DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="PYA2021DataSet1.xsc">
+      <DependentUpon>PYA2021DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="PYA2021DataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PYA2021DataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PYA2021DataSet1.xss">
+      <DependentUpon>PYA2021DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="PYA2021DataSet10.xsc">
+      <DependentUpon>PYA2021DataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="PYA2021DataSet10.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PYA2021DataSet10.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PYA2021DataSet10.xss">
+      <DependentUpon>PYA2021DataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="PYA2021DataSet11.xsc">
+      <DependentUpon>PYA2021DataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="PYA2021DataSet11.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PYA2021DataSet11.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PYA2021DataSet11.xss">
+      <DependentUpon>PYA2021DataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="PYA2021DataSet12.xsc">
+      <DependentUpon>PYA2021DataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="PYA2021DataSet12.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PYA2021DataSet12.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PYA2021DataSet12.xss">
+      <DependentUpon>PYA2021DataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="PYA2021DataSet13.xsc">
+      <DependentUpon>PYA2021DataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="PYA2021DataSet13.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PYA2021DataSet13.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PYA2021DataSet13.xss">
+      <DependentUpon>PYA2021DataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="PYA2021DataSet14.xsc">
+      <DependentUpon>PYA2021DataSet14.xsd</DependentUpon>
+    </None>
+    <None Include="PYA2021DataSet14.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PYA2021DataSet14.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PYA2021DataSet14.xss">
+      <DependentUpon>PYA2021DataSet14.xsd</DependentUpon>
+    </None>
+    <None Include="PYA2021DataSet15.xsc">
+      <DependentUpon>PYA2021DataSet15.xsd</DependentUpon>
+    </None>
+    <None Include="PYA2021DataSet15.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PYA2021DataSet15.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PYA2021DataSet15.xss">
+      <DependentUpon>PYA2021DataSet15.xsd</DependentUpon>
+    </None>
+    <None Include="PYA2021DataSet16.xsc">
+      <DependentUpon>PYA2021DataSet16.xsd</DependentUpon>
+    </None>
+    <None Include="PYA2021DataSet16.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PYA2021DataSet16.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PYA2021DataSet16.xss">
+      <DependentUpon>PYA2021DataSet16.xsd</DependentUpon>
+    </None>
+    <None Include="PYA2021DataSet17.xsc">
+      <DependentUpon>PYA2021DataSet17.xsd</DependentUpon>
+    </None>
+    <None Include="PYA2021DataSet17.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PYA2021DataSet17.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PYA2021DataSet17.xss">
+      <DependentUpon>PYA2021DataSet17.xsd</DependentUpon>
+    </None>
+    <None Include="PYA2021DataSet18.xsc">
+      <DependentUpon>PYA2021DataSet18.xsd</DependentUpon>
+    </None>
+    <None Include="PYA2021DataSet18.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PYA2021DataSet18.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PYA2021DataSet18.xss">
+      <DependentUpon>PYA2021DataSet18.xsd</DependentUpon>
+    </None>
+    <None Include="PYA2021DataSet19.xsc">
+      <DependentUpon>PYA2021DataSet19.xsd</DependentUpon>
+    </None>
+    <None Include="PYA2021DataSet19.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PYA2021DataSet19.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PYA2021DataSet19.xss">
+      <DependentUpon>PYA2021DataSet19.xsd</DependentUpon>
+    </None>
+    <None Include="PYA2021DataSet2.xsc">
+      <DependentUpon>PYA2021DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="PYA2021DataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PYA2021DataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PYA2021DataSet2.xss">
+      <DependentUpon>PYA2021DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="PYA2021DataSet20.xsc">
+      <DependentUpon>PYA2021DataSet20.xsd</DependentUpon>
+    </None>
+    <None Include="PYA2021DataSet20.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PYA2021DataSet20.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PYA2021DataSet20.xss">
+      <DependentUpon>PYA2021DataSet20.xsd</DependentUpon>
+    </None>
+    <None Include="PYA2021DataSet21.xsc">
+      <DependentUpon>PYA2021DataSet21.xsd</DependentUpon>
+    </None>
+    <None Include="PYA2021DataSet21.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PYA2021DataSet21.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PYA2021DataSet21.xss">
+      <DependentUpon>PYA2021DataSet21.xsd</DependentUpon>
+    </None>
+    <None Include="PYA2021DataSet22.xsc">
+      <DependentUpon>PYA2021DataSet22.xsd</DependentUpon>
+    </None>
+    <None Include="PYA2021DataSet22.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PYA2021DataSet22.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PYA2021DataSet22.xss">
+      <DependentUpon>PYA2021DataSet22.xsd</DependentUpon>
+    </None>
+    <None Include="PYA2021DataSet23.xsc">
+      <DependentUpon>PYA2021DataSet23.xsd</DependentUpon>
+    </None>
+    <None Include="PYA2021DataSet23.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PYA2021DataSet23.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PYA2021DataSet23.xss">
+      <DependentUpon>PYA2021DataSet23.xsd</DependentUpon>
+    </None>
+    <None Include="PYA2021DataSet24.xsc">
+      <DependentUpon>PYA2021DataSet24.xsd</DependentUpon>
+    </None>
+    <None Include="PYA2021DataSet24.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PYA2021DataSet24.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PYA2021DataSet24.xss">
+      <DependentUpon>PYA2021DataSet24.xsd</DependentUpon>
+    </None>
+    <None Include="PYA2021DataSet25.xsc">
+      <DependentUpon>PYA2021DataSet25.xsd</DependentUpon>
+    </None>
+    <None Include="PYA2021DataSet25.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PYA2021DataSet25.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PYA2021DataSet25.xss">
+      <DependentUpon>PYA2021DataSet25.xsd</DependentUpon>
+    </None>
+    <None Include="PYA2021DataSet26.xsc">
+      <DependentUpon>PYA2021DataSet26.xsd</DependentUpon>
+    </None>
+    <None Include="PYA2021DataSet26.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PYA2021DataSet26.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PYA2021DataSet26.xss">
+      <DependentUpon>PYA2021DataSet26.xsd</DependentUpon>
+    </None>
+    <None Include="PYA2021DataSet27.xsc">
+      <DependentUpon>PYA2021DataSet27.xsd</DependentUpon>
+    </None>
+    <None Include="PYA2021DataSet27.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PYA2021DataSet27.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PYA2021DataSet27.xss">
+      <DependentUpon>PYA2021DataSet27.xsd</DependentUpon>
+    </None>
+    <None Include="PYA2021DataSet28.xsc">
+      <DependentUpon>PYA2021DataSet28.xsd</DependentUpon>
+    </None>
+    <None Include="PYA2021DataSet28.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PYA2021DataSet28.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PYA2021DataSet28.xss">
+      <DependentUpon>PYA2021DataSet28.xsd</DependentUpon>
+    </None>
+    <None Include="PYA2021DataSet29.xsc">
+      <DependentUpon>PYA2021DataSet29.xsd</DependentUpon>
+    </None>
+    <None Include="PYA2021DataSet29.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PYA2021DataSet29.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PYA2021DataSet29.xss">
+      <DependentUpon>PYA2021DataSet29.xsd</DependentUpon>
+    </None>
+    <None Include="PYA2021DataSet3.xsc">
+      <DependentUpon>PYA2021DataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="PYA2021DataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PYA2021DataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PYA2021DataSet3.xss">
+      <DependentUpon>PYA2021DataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="PYA2021DataSet30.xsc">
+      <DependentUpon>PYA2021DataSet30.xsd</DependentUpon>
+    </None>
+    <None Include="PYA2021DataSet30.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PYA2021DataSet30.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PYA2021DataSet30.xss">
+      <DependentUpon>PYA2021DataSet30.xsd</DependentUpon>
+    </None>
+    <None Include="PYA2021DataSet31.xsc">
+      <DependentUpon>PYA2021DataSet31.xsd</DependentUpon>
+    </None>
+    <None Include="PYA2021DataSet31.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PYA2021DataSet31.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PYA2021DataSet31.xss">
+      <DependentUpon>PYA2021DataSet31.xsd</DependentUpon>
+    </None>
+    <None Include="PYA2021DataSet32.xsc">
+      <DependentUpon>PYA2021DataSet32.xsd</DependentUpon>
+    </None>
+    <None Include="PYA2021DataSet32.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PYA2021DataSet32.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PYA2021DataSet32.xss">
+      <DependentUpon>PYA2021DataSet32.xsd</DependentUpon>
+    </None>
+    <None Include="PYA2021DataSet33.xsc">
+      <DependentUpon>PYA2021DataSet33.xsd</DependentUpon>
+    </None>
+    <None Include="PYA2021DataSet33.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PYA2021DataSet33.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PYA2021DataSet33.xss">
+      <DependentUpon>PYA2021DataSet33.xsd</DependentUpon>
+    </None>
+    <None Include="PYA2021DataSet34.xsc">
+      <DependentUpon>PYA2021DataSet34.xsd</DependentUpon>
+    </None>
+    <None Include="PYA2021DataSet34.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PYA2021DataSet34.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PYA2021DataSet34.xss">
+      <DependentUpon>PYA2021DataSet34.xsd</DependentUpon>
+    </None>
+    <None Include="PYA2021DataSet4.xsc">
+      <DependentUpon>PYA2021DataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="PYA2021DataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PYA2021DataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PYA2021DataSet4.xss">
+      <DependentUpon>PYA2021DataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="PYA2021DataSet5.xsc">
+      <DependentUpon>PYA2021DataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="PYA2021DataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PYA2021DataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PYA2021DataSet5.xss">
+      <DependentUpon>PYA2021DataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="PYA2021DataSet6.xsc">
+      <DependentUpon>PYA2021DataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="PYA2021DataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PYA2021DataSet6.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PYA2021DataSet6.xss">
+      <DependentUpon>PYA2021DataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="PYA2021DataSet7.xsc">
+      <DependentUpon>PYA2021DataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="PYA2021DataSet7.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PYA2021DataSet7.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PYA2021DataSet7.xss">
+      <DependentUpon>PYA2021DataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="PYA2021DataSet8.xsc">
+      <DependentUpon>PYA2021DataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="PYA2021DataSet8.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PYA2021DataSet8.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PYA2021DataSet8.xss">
+      <DependentUpon>PYA2021DataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="PYA2021DataSet9.xsc">
+      <DependentUpon>PYA2021DataSet9.xsd</DependentUpon>
+    </None>
+    <None Include="PYA2021DataSet9.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PYA2021DataSet9.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PYA2021DataSet9.xss">
+      <DependentUpon>PYA2021DataSet9.xsd</DependentUpon>
+    </None>
+    <None Include="README.md" />
+    <None Include="Resources\327-3273204_psicologia-educativa-png-logos-de-psicologia-clinica-transparent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imagenes\corazon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imagenes\corazon %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imagenes\corazon %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imagenes\pensando.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imagenes\1486395886-checkmark_80611.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imagenes\ok_accept_3523.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imagenes\canceltheapplication_cancelar_2901.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imagenes\pngtree-brain-technology-code-digital-image_6990.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imagenes\0-3895_smbolo-da-psicologia-png-transparent-png.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imagenes\1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imagenes\edit_clear_all_icon_180807.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imagenes\priority_low_icon_136291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar_10823.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar_10823 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\medical-42_icon-icons.com_73897.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\organizer_calendar_pen_note_6134.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\organizer_calendar_pen_note_6134 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\organizer_calendar_pen_note_6134 %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imagenes\Calendario white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imagenes\Calendario black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Controlwhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imagenes\image_picture_icon_143762.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\01-16_86396 %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\01-16_86396 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\01-16_86396.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\googleagenda_94054.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imagenes\settings_alt_icon-icons.com_72042 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imagenes\change_password_icon_154438.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imagenes\eye-watch_icon-icons.com_74456.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imagenes\delete_remove_minus_icon_181585.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_remove_close_checkbox_check_icon_181586.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-google-web-search-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-google-web-search-321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-nombre-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-google-web-search-322.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-calendario-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-calendario-321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-inscripción-32 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-formato-claro-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-cancelar-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-guardar-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-guardar-32 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imagenes\logo_transparent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-inicio-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="global.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>global.edmx</DependentUpon>
+      <LastGenOutput>global.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="global.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>global.edmx</DependentUpon>
+      <LastGenOutput>global.cs</LastGenOutput>
+    </Content>
+    <Content Include="informeModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>informeModel.Context.cs</LastGenOutput>
+      <DependentUpon>informeModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="informeModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>informeModel.edmx</DependentUpon>
+      <LastGenOutput>informeModel.cs</LastGenOutput>
+    </Content>
+    <None Include="Resources\icons8-archivo-de-informe-48.png" />
+    <Content Include="nombreModel1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>nombreModel1.edmx</DependentUpon>
+      <LastGenOutput>nombreModel1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="nombreModel1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>nombreModel1.edmx</DependentUpon>
+      <LastGenOutput>nombreModel1.cs</LastGenOutput>
+    </Content>
+    <None Include="Resources\icons8-cerrar-ventana-48.png" />
+    <None Include="Resources\icons8-hoy-48.png" />
+    <None Include="Resources\icons8-calendar-week1-48.png" />
+    <None Include="Resources\icons8-calendar-week30-48.png" />
+    <None Include="Resources\icons8-calendar-week12-48.png" />
+    <None Include="Resources\icons8-tarjeta-de-empleado-50.png" />
+    <None Include="Resources\icons8-tarjeta-de-empleado-100.png" />
+    <None Include="Resources\icons8-tarjeta-de-empleado-64.png" />
+    <None Include="Resources\icons8-nombre-tag-woman-100.png" />
+    <None Include="Resources\icons8-ciudadano-global-50.png" />
+    <None Include="Resources\icons8-ranking-64.png" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

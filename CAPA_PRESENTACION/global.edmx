@@ -1,0 +1,257 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="PYA2021Model1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Cita">
+          <Key>
+            <PropertyRef Name="ID_Cita" />
+          </Key>
+          <Property Name="ID_Cita" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_Expediente" Type="int" Nullable="false" />
+          <Property Name="Fecha" Type="datetime" />
+          <Property Name="Hora" Type="time" Precision="7" />
+        </EntityType>
+        <EntityType Name="Consulta">
+          <Key>
+            <PropertyRef Name="ID_Consulta" />
+          </Key>
+          <Property Name="ID_Consulta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_Cita" Type="int" Nullable="false" />
+          <Property Name="Actividades" Type="nvarchar" MaxLength="50" />
+          <Property Name="Observaciones" Type="nvarchar" MaxLength="3000" />
+          <Property Name="Tipo" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="File_psico">
+          <Key>
+            <PropertyRef Name="ID_Expediente" />
+          </Key>
+          <Property Name="ID_Expediente" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="50" />
+          <Property Name="Estado" Type="nchar" MaxLength="1" />
+          <Property Name="Foto" Type="image" />
+          <Property Name="ID_Remision" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Remision">
+          <Key>
+            <PropertyRef Name="ID_Remision" />
+          </Key>
+          <Property Name="ID_Remision" Type="int" Nullable="false" />
+          <Property Name="ID_Expediente" Type="int" Nullable="false" />
+          <Property Name="Remitente" Type="nvarchar" MaxLength="30" />
+          <Property Name="MotivoRemision" Type="nvarchar" MaxLength="100" />
+          <Property Name="Fecha" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Seguimiento">
+          <Key>
+            <PropertyRef Name="ID_Seguimiento" />
+          </Key>
+          <Property Name="ID_Seguimiento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Fecha_inicio" Type="datetime" />
+          <Property Name="Fecha_final" Type="datetime" />
+          <Property Name="Observaciones" Type="nvarchar" MaxLength="3000" />
+          <Property Name="ID_Expediente" Type="int" />
+        </EntityType>
+        <Association Name="FK_Consulta_Cita">
+          <End Role="Cita" Type="Self.Cita" Multiplicity="1" />
+          <End Role="Consulta" Type="Self.Consulta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cita">
+              <PropertyRef Name="ID_Cita" />
+            </Principal>
+            <Dependent Role="Consulta">
+              <PropertyRef Name="ID_Cita" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="sp_ids" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="psci">
+          <Parameter Name="totalE" Type="int" Mode="InOut" />
+          <Parameter Name="totalC" Type="int" Mode="InOut" />
+          <Parameter Name="totalCO" Type="int" Mode="InOut" />
+          <Parameter Name="totalR" Type="int" Mode="InOut" />
+          <Parameter Name="totalS" Type="int" Mode="InOut" />
+        </Function>
+        <EntityContainer Name="PYA2021Model1StoreContainer">
+          <EntitySet Name="Cita" EntityType="Self.Cita" Schema="psci" store:Type="Tables" />
+          <EntitySet Name="Consulta" EntityType="Self.Consulta" Schema="psci" store:Type="Tables" />
+          <EntitySet Name="File_psico" EntityType="Self.File_psico" Schema="psci" store:Type="Tables" />
+          <EntitySet Name="Remision" EntityType="Self.Remision" Schema="psci" store:Type="Tables" />
+          <EntitySet Name="Seguimiento" EntityType="Self.Seguimiento" Schema="psci" store:Type="Tables" />
+          <AssociationSet Name="FK_Consulta_Cita" Association="Self.FK_Consulta_Cita">
+            <End Role="Cita" EntitySet="Cita" />
+            <End Role="Consulta" EntitySet="Consulta" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PYA2021Model1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Cita">
+          <Key>
+            <PropertyRef Name="ID_Cita" />
+          </Key>
+          <Property Name="ID_Cita" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_Expediente" Type="Int32" Nullable="false" />
+          <Property Name="Fecha" Type="DateTime" Precision="3" />
+          <Property Name="Hora" Type="Time" Precision="7" />
+          <NavigationProperty Name="Consulta" Relationship="Self.FK_Consulta_Cita" FromRole="Cita" ToRole="Consulta" />
+        </EntityType>
+        <EntityType Name="Consulta">
+          <Key>
+            <PropertyRef Name="ID_Consulta" />
+          </Key>
+          <Property Name="ID_Consulta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_Cita" Type="Int32" Nullable="false" />
+          <Property Name="Actividades" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Observaciones" Type="String" MaxLength="3000" FixedLength="false" Unicode="true" />
+          <Property Name="Tipo" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Cita" Relationship="Self.FK_Consulta_Cita" FromRole="Consulta" ToRole="Cita" />
+        </EntityType>
+        <EntityType Name="File_psico">
+          <Key>
+            <PropertyRef Name="ID_Expediente" />
+          </Key>
+          <Property Name="ID_Expediente" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Estado" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+          <Property Name="Foto" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="ID_Remision" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Remision">
+          <Key>
+            <PropertyRef Name="ID_Remision" />
+          </Key>
+          <Property Name="ID_Remision" Type="Int32" Nullable="false" />
+          <Property Name="ID_Expediente" Type="Int32" Nullable="false" />
+          <Property Name="Remitente" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="MotivoRemision" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Fecha" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Seguimiento">
+          <Key>
+            <PropertyRef Name="ID_Seguimiento" />
+          </Key>
+          <Property Name="ID_Seguimiento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Fecha_inicio" Type="DateTime" Precision="3" />
+          <Property Name="Fecha_final" Type="DateTime" Precision="3" />
+          <Property Name="Observaciones" Type="String" MaxLength="3000" FixedLength="false" Unicode="true" />
+          <Property Name="ID_Expediente" Type="Int32" />
+        </EntityType>
+        <Association Name="FK_Consulta_Cita">
+          <End Role="Cita" Type="Self.Cita" Multiplicity="1" />
+          <End Role="Consulta" Type="Self.Consulta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cita">
+              <PropertyRef Name="ID_Cita" />
+            </Principal>
+            <Dependent Role="Consulta">
+              <PropertyRef Name="ID_Cita" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PYA2021Entities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Cita" EntityType="Self.Cita" />
+          <EntitySet Name="Consulta" EntityType="Self.Consulta" />
+          <EntitySet Name="File_psico" EntityType="Self.File_psico" />
+          <EntitySet Name="Remision" EntityType="Self.Remision" />
+          <EntitySet Name="Seguimiento" EntityType="Self.Seguimiento" />
+          <AssociationSet Name="FK_Consulta_Cita" Association="Self.FK_Consulta_Cita">
+            <End Role="Cita" EntitySet="Cita" />
+            <End Role="Consulta" EntitySet="Consulta" />
+          </AssociationSet>
+          <FunctionImport Name="sp_ids">
+            <Parameter Name="totalE" Mode="InOut" Type="Int32" />
+            <Parameter Name="totalC" Mode="InOut" Type="Int32" />
+            <Parameter Name="totalCO" Mode="InOut" Type="Int32" />
+            <Parameter Name="totalR" Mode="InOut" Type="Int32" />
+            <Parameter Name="totalS" Mode="InOut" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PYA2021Model1StoreContainer" CdmEntityContainer="PYA2021Entities1">
+          <EntitySetMapping Name="Cita">
+            <EntityTypeMapping TypeName="PYA2021Model1.Cita">
+              <MappingFragment StoreEntitySet="Cita">
+                <ScalarProperty Name="ID_Cita" ColumnName="ID_Cita" />
+                <ScalarProperty Name="ID_Expediente" ColumnName="ID_Expediente" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Hora" ColumnName="Hora" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Consulta">
+            <EntityTypeMapping TypeName="PYA2021Model1.Consulta">
+              <MappingFragment StoreEntitySet="Consulta">
+                <ScalarProperty Name="ID_Consulta" ColumnName="ID_Consulta" />
+                <ScalarProperty Name="ID_Cita" ColumnName="ID_Cita" />
+                <ScalarProperty Name="Actividades" ColumnName="Actividades" />
+                <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+                <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="File_psico">
+            <EntityTypeMapping TypeName="PYA2021Model1.File_psico">
+              <MappingFragment StoreEntitySet="File_psico">
+                <ScalarProperty Name="ID_Expediente" ColumnName="ID_Expediente" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="Foto" ColumnName="Foto" />
+                <ScalarProperty Name="ID_Remision" ColumnName="ID_Remision" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Remision">
+            <EntityTypeMapping TypeName="PYA2021Model1.Remision">
+              <MappingFragment StoreEntitySet="Remision">
+                <ScalarProperty Name="ID_Remision" ColumnName="ID_Remision" />
+                <ScalarProperty Name="ID_Expediente" ColumnName="ID_Expediente" />
+                <ScalarProperty Name="Remitente" ColumnName="Remitente" />
+                <ScalarProperty Name="MotivoRemision" ColumnName="MotivoRemision" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Seguimiento">
+            <EntityTypeMapping TypeName="PYA2021Model1.Seguimiento">
+              <MappingFragment StoreEntitySet="Seguimiento">
+                <ScalarProperty Name="ID_Seguimiento" ColumnName="ID_Seguimiento" />
+                <ScalarProperty Name="Fecha_inicio" ColumnName="Fecha_inicio" />
+                <ScalarProperty Name="Fecha_final" ColumnName="Fecha_final" />
+                <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+                <ScalarProperty Name="ID_Expediente" ColumnName="ID_Expediente" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_ids" FunctionName="PYA2021Model1.Store.sp_ids" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
